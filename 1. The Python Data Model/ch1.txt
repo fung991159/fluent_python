@@ -1,0 +1,9 @@
+Summary;
+    1. gave some example class and show case some dunder method
+    2. __repr__ is for developer, need to show how the class was constructed
+    3. __str__ is for user, display some textxual info
+    4. __bool__ determine how truthy a class is, default is true
+    5. length is a function but not a method because it call for built-in objects of CPython, just like abs,
+        it get special treatment to run fast!
+    6. Python object model and Python data model referring to the same thing.
+
