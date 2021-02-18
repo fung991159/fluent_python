@@ -1,0 +1,36 @@
+Summary;
+    1. Built-in sequences comes with 2 type: 1. container sequence or flat sequence
+        a. container sequence: hold reference to the objects it contains, can hold different type of object.
+        example can be list, tuple deque
+        b. flat sequence: store the value of contents, more compact. example: str, integer , array.array, bytes.
+    2. mutability:
+        a. mutable: list, array
+        b. immutable: tuple, str, bytes
+        mutable sequence inhereit all method from immutable sequence. Both are "virtual subclass" of abc.Sequence, 
+        whatever that mean
+    3. shortform:
+        listcomps = list comprehensions, can only use to build list
+        genexps = generator expressions, build any other sequence type
+    4. Tuple is a immutable container. it is not just "immutable list" (lol, that's what I thought). it can be use as records with no field name
+        benefits:
+            1. when you see uple in code, you know length will never change
+            2. tuple is more performant than list
+        tuple is immutable in a sense that the reference cannot be replace or deleted. But if the container object change, 
+        the value of tuple can change
+        >>> a = (10, 'alpha', [1, 2])
+        >>> a[-1].append(99)
+        >>> a = (10, 'alpha', [1, 2, 99])
+        to gurantee immutable tuple content we can use hash(). an object is only hashable if its value cannot ever change
+
+    5. sequence slicing under the hood is seq.__getitem__(slice(start, stop, step)). So we can name slice with slice object
+        and store it in a variable for clairity sake.
+    6. sequence can also be assigned like so
+        l[2:5] = [20, 30]
+    7. __iadd__: inplace add
+        consider a += b
+        for mutable sequence:
+            a will change in place (same object)
+        if __iadd__ not implemented:
+            a = a + b
+        new object created! where (a + b) get evaluated first, then assign to a 
+        
