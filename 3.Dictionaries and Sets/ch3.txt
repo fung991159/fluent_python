@@ -1,0 +1,19 @@
+Summary:
+    dict:
+        1. python dictionary is everywhere.
+        2. an object is hashable if during its lifetime the value would not change
+        3. d.get(k, default) is a more convient alternative to try, except KeyError
+        4. it is possible to edit the behaviour of missing key in dict with __missing__.
+            though this will only be called from lookup using __getitem__, NOT __contains__ (in)
+        5. when building custom mapping object, it is best to inherit from UserDict instead of dict. Since UserDict
+        can avoid undesired recursion when coding dunder method. because the actual dict is store in UserDict.data instead
+        of the object itself
+        6. MappingProxyType is a great way to create a layer of unchangable dict, yet the underlying dict can be changed.
+    set:
+        1. basic use case of a set is to remove duplicate. But with order dict now can also use dict: list(dict.fromkeys(l).key())
+        2. Set elements must be hashable, it is possible to have forzenset in a set (kind of nested)
+        3. building a set with LIteral syntax is faster than using constructor set(). Since set() takes a few more steps.
+        4. set have a lot of operator that can be useful and save a lot of loop. & (intersect) | (union). Even dictionary keys() can 
+        use these operator and return a set type object.
+    Hash Table (internal working of dict and set):
+        1. 
