@@ -16,4 +16,23 @@ Summary:
         4. set have a lot of operator that can be useful and save a lot of loop. & (intersect) | (union). Even dictionary keys() can 
         use these operator and return a set type object.
     Hash Table (internal working of dict and set):
-        1. 
+        some super fundamental concept with hash table explained
+        before python36:
+        a. how hash table works in set:
+            1. at least 8 rows, only 1/3 must be empty to reduce chance of index collisions
+            2. the table will have field "hash_code" and "pointer to element"
+            3. each object will be hashed, insert to certain index of the hash table with hash_code % table_size
+            4. index collisions happens when a hashcode is inserting into hash table which row/bucket is already taken
+              , in this case python will insert it with index + 1
+            5. during insertion when hash_code matches (because two object can have same hash code), value must also be check
+            to see if it is the same object
+        b. how hash table works in dict:
+            1. fields becomes "hash code", "pointer to key object", "pointer to value object",
+            hence dict can have no order because of index collisions before python 36
+
+        after python 36, all dict are ordered:
+            1. because "entries array" were added, a field to store "indices"
+            2. each insertion will do the same thing as before, except random index collisions will take place in "entries array"
+            3. this array inturn store the index position of the actual Entries / hash table. Hence all insertion order are preserved.
+
+        Key sharing: happens only in class "__init__"
