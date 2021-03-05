@@ -1,0 +1,11 @@
+1. this chapter is on namedTuple, typing.NamedTuple, dataclass
+2. namedtuple is the lightest weight and pretty much act like a tuple, i.e. immutable
+3. typing.NamedTuple is justlike namedTuple, but with type annotation allowed.
+4. dataclass is just a decorator on a normal class. There by turning it into something like typing.
+    with more powerful method
+4. all these three object have as_dict / _as_dict method to turn record into key/value dict / JSON
+
+
+this chapter is a little bit too specific on record type data, so it isn't something that need to know
+in general development
+
