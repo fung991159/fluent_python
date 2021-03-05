@@ -1,0 +1,16 @@
+1. python variables is like labels attached to objects, instead of a box that hold the object.
+2. a == b checks if the value is equal, a is not b checks if two object is the same identity.
+3. tuple immutability refer to the data structure, i.e. it tag to the same referenced object, always, 
+    but what is within this object can change if it is mutable type
+4. shallow copy is default. copied object actually refer to the same object. If item in it is mutable,
+    then it can produce bug that hard to understand.
+5. copy = shallow copy, deepcopy() = actually create and refer to a new distinct object
+6. python function parameter passing is "call by sharing". In which paramters inside function 
+    become aliases of the actual arguments. (i.e. just like shallow copy, it is the same object)
+7. using mutable type (such as list) as python function default value is general bad idea. As 
+ multiple function can refernce to the same object. The remedy is to use "None" as default value,
+  then substitute it with the desire default value instead
+8. becareful not to work on pass-in parameter list itself, instead make a copy of it by using list()
+9. "del" doesn't actually delete an object, it delete the reference to it. In Cpython and object
+will be garbage collected only when there is no reference to it.
+10. "weak reference" does not incredase reference count, hence a "referent" can still be garbage collected
