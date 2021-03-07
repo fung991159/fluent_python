@@ -1,0 +1,10 @@
+1. This chapter is on decorator which I have quite a bit of understanding from "cookbook"
+2. decorator run after the decorated function is defined (at import time). while decorated functios only run when
+  invoked (at runtime)
+3. "closure" = function with extended scope that encompasses nonglobal variables reference in 
+    the body of the function but not defined there
+4. nonlocal is for flagging a variable within a function as a free variable.
+5. functools.lru_cache cache function output, thereby improving efficiency
+6. stacking decorators order matter. the order of decorator applied is on the order of closeness to the decorated function
+7. functools.singledispatch is a decorator that allows for adding additional function without if/elif/elif/elif blocks
+8. It seems the author is pretty much against using decorator as a function. Instead it should be implemented with classes
