@@ -1,0 +1,3 @@
+1. Pretty good mention of two design pattern; "The Strategy" and "The Command"
+2. strategy is a design pattern than allow variation in a family of algorithms, making them interchangeable.
+3. Command is a design pattern that decouple "Invoker" with the "Receiver"
