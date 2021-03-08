@@ -1,0 +1,5 @@
+this chater is a showcase of python dunder method, some highlight 
+that is rarely mentioned:
+
+1. __slot__: storing attributes in tuple instead of dictionary as __dict__,
+    hence saving memory. But the attirbutes is immutable.
