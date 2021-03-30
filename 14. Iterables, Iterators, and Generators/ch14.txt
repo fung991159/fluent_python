@@ -1,0 +1,17 @@
+Iterables vs Iterators
+
+Iterator : must implement "__next__", usually also with "__iter__" that return self
+Iterable : must implement "__iter__", cannot implement "__next__"
+
+1. any object with __iter__ method returns an iterator is itself an Iterable.
+    python obtains iterators from iterables.
+2. I had read read a bit on this topic before. But finally understand it fully now. 
+    So the reason of having another layer of "Iterator" is to have isolation of loop order 
+    and position if needed. If iterable also implement "__next__", then it is not possible to 
+    have multiple loop order.
+3. whenever possible, do loop lazily, i.e. use generator funcion / expression
+4. "yield from" is just returning a generator value together. Useful for nested generator loop,
+    such as the standard lib "chain" function. Though the importance should be in "coroutine"
+5. the chapter also expose a lot of standard lib generation functions
+6. coroutine (__send__) is a different concept that have nothing to do with generator or iteration, they just look
+    similar.
