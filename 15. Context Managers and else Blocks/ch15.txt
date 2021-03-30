@@ -1,0 +1,10 @@
+1. "Else" in for, while and try/except
+    the same word mean different things:
+    1. for loop: else block will run when the for loop was run completely only (i.e. no break)
+                 python cookbook author actually against this pattern, though this book is for. I am 
+                 indifferent. did find some edge use case
+    2. while loop: else block will run when while predicate becomes falsy. 
+    3. try/except: this is more common. Else block will run when there is no exception, 
+                  but the code isn't something that can raise an exception(the part that belong in try block)
+
+
