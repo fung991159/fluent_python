@@ -1,0 +1,8 @@
+starting from this chapter are the really tough stuff: coroutine, concurrency, metaprogramming. 
+Who does love that? :p
+
+1. coroutine is pretty much a generator, but use .send(datum) to feed the data into coroutine
+2. in coroutine, "yield" is just for flow control, i.e. "stopping" the coroutine at "yield"
+3. coroutine state can be get from inspect.getgeneratorstate()
+4. "priming" a coroutine means advancing it to the first yield such that it is ready to use
+as live coroutine
