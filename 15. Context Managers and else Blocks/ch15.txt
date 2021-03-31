@@ -6,5 +6,9 @@
     2. while loop: else block will run when while predicate becomes falsy. 
     3. try/except: this is more common. Else block will run when there is no exception, 
                   but the code isn't something that can raise an exception(the part that belong in try block)
-
-
+2. Context manager is the "WITH" statment that can change a class state. The book inlucded a pretty good example on 
+    sys.stdout
+3. @contextlib.contextmanager: standard lib short-cut for building own __enter__, __exit__. when applied
+    the code before yield will be run as '__enter__' section, while the one behind is '__exit__'. 
+    it is pretty impressive that this can be wrapped into a generator function.
+4. Using "With" statment as "subroutine", changing the behaviour of a class when it was in __enter__ state.
