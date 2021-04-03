@@ -6,3 +6,15 @@ Who does love that? :p
 3. coroutine state can be get from inspect.getgeneratorstate()
 4. "priming" a coroutine means advancing it to the first yield such that it is ready to use
 as live coroutine
+5. "b = yield a", when yield stop, the value from generator.send() is not assign to b yet. only after calling
+    next yeild would varaible b be available
+6. coroutine is particular good to be use with a while loop, yield can be used as a stopper, while intermediate can be
+    stored within a function without using attribute at all!
+7. to stop a while loop / infinite coroutine we just need to pass in some non sense value, like "None". Alternatively
+    it can be done with .close()
+8. delegating generator : with "yield from" subgenerator
+    subgenerator: can be another "yield from", but eventually must end with a single yield or any iterable.
+9. in real world, yield from usually used with asyncio module. 
+10. there is another "task" type coroutine example, which is pretty hard to understand to start with, guess
+    it won't have a lot of use case outside of software engineering.
+
