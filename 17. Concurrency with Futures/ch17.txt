@@ -1,0 +1,21 @@
+Concurrency, another fun and advance topic. This is actually more practical
+    than "coroutine" in my opinion as it has a whole lot more use case
+    , especially in dealing with data platform REST API.
+
+1. concurrent.futures has ThreadPoolExcutor and ProcessPoolExecutor classes
+    both have same interface that allows for easy switching between the two,
+    what a brilliant example of "duck typing"
+2. What exactly is a "Future"? Future class represent deferred computation that
+    may or may not have been completed. It actually coorespond to "Promise" object
+    in JavaScript. Hence an instance of Future can be queried in queues, about
+    its state and their result when available.
+3. instance of "Future" should not be created directly. Instead it should be
+    created by scheduler such as "Executor" class.
+4. Python code have no control over "GIL", only built-in function / extension
+    written in C can release GIL while running time-consuming task. Hence
+    each thread will release the GIL when waiting IO bounded result.
+5. Executor.map() returns result in exactly the same order as called. Hence
+    the code will run as fast as the slowest thread.
+6. Executor.as_completed() return result as it is ready, regardless of the order
+    submitted. It is more flexible than map().
+
