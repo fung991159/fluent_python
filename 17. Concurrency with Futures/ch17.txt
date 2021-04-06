@@ -18,4 +18,10 @@ Concurrency, another fun and advance topic. This is actually more practical
     the code will run as fast as the slowest thread.
 6. Executor.as_completed() return result as it is ready, regardless of the order
     submitted. It is more flexible than map().
-
+7. lib "tqdm" is useful for producing progress bar over any iterable
+8. It is a userful pattern to store each Futures instance with .submit() as Key in a dict,
+    with dict Value as anything that could be useful later on in the code, could be error 
+    handling.
+9. concurrent.futures provided very high level interface for concurrent
+    programming. But if required it is possible to add flexibilty
+    using lower level module such as thread, lock etc.
