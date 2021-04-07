@@ -1,0 +1,31 @@
+Concurrency: dealing with lot of things at once, about structure
+Parallelism: doing lots of things at once, about execution
+
+example of concurrency is running 100+process with 4 core CPU. at any one time 
+there are no more than 4 process running.
+
+1. use asyncio.sleep() instead of time.sleep() to avoid blocking main thread
+2. asyncio heavily use coroutine, hence it can be stop anytime.
+3. asyncio.Futures and concurrent.Futures has mostly the same interface,
+    what is extra si it provide coroutine with "yield from" ability.
+4. to obtain a Task object:
+    a. asyncio.async(coro_or_future, *, loop=None)
+    b. BaseEventLoop.create_task(coro)
+5. "yield from" avoids blocking because current coroutine is suspended,
+    where control flow go back to event loop, which then drive other 
+    coroutine.
+
+why asyncio can run faster than single thread function?
+
+two ways to prevent blocking calls:
+    1. run each blocking operation in a seperate thread
+    2. turn each blocking operation to non blocking asynchronous calls
+
+multi-threads is not as good since each thread has memory overhead,
+can't afford thousand fo connections (each thread in python is in term of MB)
+
+call back function is the low memory alternative. which coroutines
+and generators can a call back function by suspending it, with lower
+memory required than mutli-threads.
+
+
