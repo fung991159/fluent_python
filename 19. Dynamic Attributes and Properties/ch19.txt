@@ -1,0 +1,25 @@
+Metaprogramming! something that only the most passionate (i.e. geeky)
+developer will ever touch upon.
+
+1. a method is just a attribute that is callable. (this echo SICP's 
+ statement that data and procedure is the same thing)
+2. it is possible to do multiple context manager with a comma, i.e.
+    WITH open('abc.txt') as f1, open('123.json') as f2
+3. the ForzonJSON is actually something I tried to build b4.
+   certainly the author handled way better than I did. It can be 
+   access with pandas like dot notation as well as as dict.
+4. using self.__dict__.update(**kwargs) is pretty good way to add
+    attributes to an object quickly
+5. x.attr, python intepretor will start looking for attr in class,
+    only if it isn't a class attributes then it will look into 
+    an instance.
+6. The chapter show cased a generic property setting / getting method
+    which is quite impressive. But should be better to do it via
+    metaclass / descriptor
+7. reading and writing directly into __dict__ doesn't trigger special 
+    method, hence this is the usual way to by pass it.
+8. __getattribute__ always called when there is an attempt to retreive
+    an named attribute, only when it fail to return result will call 
+    __getattr__.
+
+    
