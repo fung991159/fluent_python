@@ -1,0 +1,21 @@
+1. Descriptors are a way of reusing the same access logic in multiple attributes
+a descriptors is a class that implement a protocol any of the __get__, 
+__set__, __delete__ methods.
+2. Descriptors and property do the same thing. Former does it with a class, latter
+with higher order function
+3. to use a descriptor is to declare the descriptor class, then declare the instance
+of it as class attribute of another class.
+4. descriptors managing instance attributes should store values in the managed instance
+5. property factory is simplier, caller doesn't need to know about
+    anything about descriptor dunder method. But descriptor can easily 
+    be extended by subclassing.
+6. overriding descriptor (aka data descriptor/enforced descrikptor): 
+    descriptor with __set__ method. 
+    althought being a class attribtue, it can override attempts to assign to 
+    instance attribtue.
+7. non-overriding descriptor (aka Nonoverriding descriptors): 
+    without __set__method, any new assign to instance attribute can
+    replace the instance attributes
+8. python function is itself a non-overriding descriptor, though
+    have a hard time to understand the detail. need to revisit this part
+
