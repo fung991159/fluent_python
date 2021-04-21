@@ -1,0 +1,26 @@
+1. Class metaprogramming = creating or customizing classes at runtime
+2. metaclass are hard to justify in real code after introduction of 
+    "class decorators"
+3. class decorator is same as function decorator, but the target is a
+    class instead of a function.
+4. "type" is a class that can create other class when given the three
+    arguemnts: a. class name, b. bases class (parent), c. method
+5. import time: interpreter parse source code in .py into bytecode.
+    Though it can also include something that seems to be assign to 
+    "run time", e.g. connecting to a database
+6. the book provided very good scenario of how import time works.
+    #1: plain import of the modules
+        a.function will be complied, but body does not execute
+        b. class body will be excuted, including nested one
+        c. decorator will run AFTER class
+    #2: execute the modules
+        same as #1. except the __name__=='__main__' will be ran.
+7. metaclass:
+    a. object is an instance of type, and type is a subclass of object
+    b. object is instance of type, type is an instance of itself.
+    c. metaclass is also a subclasses of type, it can customize instance
+    by implementing __init__.
+8. when class is provided with a metaclass, it will inherit from that instead
+    of "type"
+9. __prepare__ should no longer be valid since python 3.6 as dict is now
+    automatically ordered.
